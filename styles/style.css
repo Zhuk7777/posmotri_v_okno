@@ -56,6 +56,19 @@ ol {
   color: #fff;
   border: 1px solid #fff;
   cursor: pointer;
+  position: relative;
+}
+
+.button:focus {
+  outline: none;
+}
+
+button:focus-visible::before {
+  position: absolute;
+  border: 1px solid #fff;
+  inset: 1px;
+  display: block;
+  content: '';
 }
 
 .button:active {
@@ -65,14 +78,6 @@ ol {
 .button:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
-}
-
-.button:focus {
-  outline: none;
-}
-
-button:focus-visible {
-  outline-offset: 1px;
 }
 
 .content {
@@ -230,23 +235,37 @@ button:focus-visible {
 }
 
 .content__card-link {
+  padding: 4px;
+  display: block;
   text-decoration: none;
   color: #fff;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  border: 1px solid #fff;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__video-card {
   display: flex;
   align-items: start;
   padding: 2px;
-}
-
-.content__video-card:active {
-  background-color: #545050;
-}
-
-.content__video-card:hover {
-  text-decoration: underline;
-  text-underline-offset: 6px;
 }
 
 .content__video-card-description-container {
